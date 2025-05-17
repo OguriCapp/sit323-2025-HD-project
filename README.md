@@ -8,3 +8,5 @@ Additionally, this platform also supports team task sharing, making it useful fo
 The whole app was containerized using Docker to simplify deployment. 
 I first deployed it to Google Cloud Run for a setup, and later tested deployment on Google Kubernetes Engine using Kubernetes manifests. 
 After testing if everything worked, I deleted the GKE cluster to reduce costs.
+
+And now, you could use this projject by click: https://deakin-task-board-928342173867.asia-southeast1.run.app
