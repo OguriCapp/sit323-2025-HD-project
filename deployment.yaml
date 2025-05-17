@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deakin-task-board
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deakin-task-board
+  template:
+    metadata:
+      labels:
+        app: deakin-task-board
+    spec:
+      containers:
+      - name: deakin-task-board
+        image: asia-southeast1-docker.pkg.dev/deakinataskboardby224385035/deakin-task-board/app:v1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FIREBASE_API_KEY
+          value: "AIzaSyBy4Z3PYziygEpMJp9TWlkO2Poq8hJkjF4"
+        - name: FIREBASE_AUTH_DOMAIN
+          value: "deakinataskboardby224385035.firebaseapp.com"
+        - name: FIREBASE_PROJECT_ID
+          value: "deakinataskboardby224385035"
+        - name: FIREBASE_STORAGE_BUCKET
+          value: "deakinataskboardby224385035.appspot.com"
+        - name: FIREBASE_MESSAGING_SENDER_ID
+          value: "928342173867"
+        - name: FIREBASE_APP_ID
+          value: "1:928342173867:web:2a685aa3254e0d3584efee"

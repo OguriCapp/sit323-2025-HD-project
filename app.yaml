@@ -1,0 +1,25 @@
+runtime: nodejs16
+
+env_variables:
+  FIREBASE_API_KEY: ${FIREBASE_API_KEY}
+  FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
+  FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+  FIREBASE_STORAGE_BUCKET: ${FIREBASE_STORAGE_BUCKET}
+  FIREBASE_MESSAGING_SENDER_ID: ${FIREBASE_MESSAGING_SENDER_ID}
+  FIREBASE_APP_ID: ${FIREBASE_APP_ID}
+  FIREBASE_MEASUREMENT_ID: ${FIREBASE_MEASUREMENT_ID}
+
+handlers:
+  - url: /public
+    static_dir: public
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
+
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 1
+  min_instances: 0
+  max_instances: 2 

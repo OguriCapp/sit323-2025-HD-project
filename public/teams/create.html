@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Team - Deakin Task Board</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Deakin Task Board</h1>
+            <div class="auth-buttons">
+                <a href="../dashboard.html" class="btn-auth">Dashboard</a>
+                <a href="#" class="btn-auth" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2>Create New Team</h2>
+            <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Teams</a>
+        </div>
+
+        <div class="form-container" style="max-width: 800px;">
+            <h3>Team Details</h3>
+            <form id="createTeamForm">
+                <div class="form-group">
+                    <label for="name">Team Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="SIT323 Team">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" placeholder="This team is for SIT323 project..."></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Create Team</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Deakin Task Board - SIT323-4.3HD_224385035</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/teams.js"></script>
+</body>
+</html> 

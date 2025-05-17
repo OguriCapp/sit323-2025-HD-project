@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks - Deakin Task Board</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Deakin Task Board</h1>
+            <div class="auth-buttons">
+                <a href="create.html" class="btn-auth"><i class="fas fa-plus"></i> New Task</a>
+                <a href="#" class="btn-auth" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <div class="sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=User&background=2e7d32&color=fff" alt="User Avatar" id="userAvatar">
+                    </div>
+                    <div class="user-info">
+                        <h3 id="userName">User Name</h3>
+                        <p id="userEmail">user@deakin.edu.au</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul class="sidebar-menu">
+                        <li><a href="../dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="index.html" class="active"><i class="fas fa-tasks"></i> My Tasks</a></li>
+                        <li><a href="../teams/index.html"><i class="fas fa-users"></i> Teams</a></li>
+                        <li><a href="../users/profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="content">
+                <div class="tasks-header">
+                    <h2>My Tasks</h2>
+                    <div class="actions">
+                        <a href="create.html" class="btn btn-primary"><i class="fas fa-plus"></i> New Task</a>
+                    </div>
+                </div>
+                
+                <div class="tasks-container" id="tasksContainer">
+                    <div id="tasksList">
+                        <!-- Tasks will be loaded dynamically -->
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading tasks...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Deakin Task Board - SIT323-4.3HD_224385035</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tasks.js"></script>
+    <script src="../js/reminder.js"></script>
+</body>
+</html> 

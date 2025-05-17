@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task - Deakin Task Board</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Deakin Task Board</h1>
+            <div class="auth-buttons">
+                <a href="../dashboard.html" class="btn-auth">Dashboard</a>
+                <a href="#" class="btn-auth" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2>Create New Task</h2>
+            <a href="../dashboard.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Tasks</a>
+        </div>
+
+        <div class="form-container" style="max-width: 800px;">
+            <h3>Task Details</h3>
+            <form id="createTaskForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" required placeholder="SIT323 Task #1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" placeholder="This is a task for creating a Plan..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assignedTo">Assigned to</label>
+                    <select id="assignedTo" name="assignedTo" class="form-control">
+                        <option value="">Assign to myself</option>
+                        <!-- Other team members will be loaded dynamically -->
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" id="dueDate" name="dueDate" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority" class="form-control">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Category (Optional)</label>
+                        <select id="category" name="category" class="form-control">
+                            <option value="assignment">Assignment</option>
+                            <option value="project">Project</option>
+                            <option value="research">Research</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="teamId">Team (Optional)</label>
+                        <select id="teamId" name="teamId" class="form-control">
+                            <option value="">No Team</option>
+                            <!-- Teams will be loaded dynamically -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attachment">Attachment (Optional)</label>
+                    <input type="file" id="attachment" name="attachment" class="form-control custom-file-input">
+                    <label for="attachment" class="custom-file-label">Choose File</label>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Create Task</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Deakin Task Board - SIT323-4.3HD_224385035</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/tasks.js"></script>
+    <script>
+        // Update file input label with selected filename
+        document.getElementById('attachment').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'Choose File';
+            const label = document.querySelector('.custom-file-label');
+            if (label) {
+                label.textContent = fileName;
+            }
+        });
+    </script>
+</body>
+</html> 

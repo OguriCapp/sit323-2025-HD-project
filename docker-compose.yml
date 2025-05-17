@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:8080"
+    environment:
+      - NODE_ENV=production
+      - FIREBASE_API_KEY=AIzaSyBy4Z3PYziygEpMJp9TWlkO2Poq8hJkjF4
+      - FIREBASE_AUTH_DOMAIN=deakinataskboardby224385035.firebaseapp.com
+      - FIREBASE_PROJECT_ID=deakinataskboardby224385035
+      - FIREBASE_STORAGE_BUCKET=deakinataskboardby224385035.appspot.com
+      - FIREBASE_MESSAGING_SENDER_ID=928342173867
+      - FIREBASE_APP_ID=1:928342173867:web:2a685aa3254e0d3584efee
+    restart: unless-stopped 
