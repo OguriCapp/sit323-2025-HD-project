@@ -470,4 +470,59 @@ router.delete('/:id', checkAuth, async (req, res) => {
   }
 });
 
+// Test Microservice Endpoint 1: User Service
+router.get('/test/userservice/getUser/:userId', (req, res) => {
+  const { userId } = req.params;
+  console.log(`[Test Microservice] Received request for user: ${userId}`);
+  // Simulate fetching user data from a separate user service
+  res.json({
+    success: true,
+    message: `Simulated user data for user ID: ${userId}`,
+    userData: {
+      id: userId,
+      username: `testuser_${userId}`,
+      email: `${userId}@example.com`
+    }
+  });
+});
+
+// Test Microservice Endpoint 3: Task Service
+router.get('/test/taskservice/getTask/:taskId', (req, res) => {
+  const { taskId } = req.params;
+  console.log(`[Test Microservice] Received request for task: ${taskId}`);
+  // Simulate fetching task data from a separate task service
+  res.json({
+    success: true,
+    message: `Simulated task data for task ID: ${taskId}`,
+    taskData: {
+      id: taskId,
+      title: `Simulated Task ${taskId}`,
+      description: `This is a simulated description for task ${taskId}.`,
+      status: 'pending',
+      priority: 'medium',
+      dueDate: '2025-12-31T23:59:59.999Z',
+      assignedTo: 'simulated_user_id',
+      teamId: 'simulated_team_id'
+    }
+  });
+});
+
+// Test Microservice Endpoint 4: Team Service
+router.get('/test/teamservice/getTeam/:teamId', (req, res) => {
+  const { teamId } = req.params;
+  console.log(`[Test Microservice] Received request for team: ${teamId}`);
+  // Simulate fetching team data from a separate team service
+  res.json({
+    success: true,
+    message: `Simulated team data for team ID: ${teamId}`,
+    teamData: {
+      id: teamId,
+      name: `Simulated Team ${teamId}`,
+      description: `This is a simulated description for team ${teamId}.`,
+      members: ['user1', 'user2', 'user3'],
+      createdBy: 'simulated_user_id'
+    }
+  });
+});
+
 module.exports = router; 

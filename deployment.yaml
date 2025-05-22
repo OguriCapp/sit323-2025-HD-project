@@ -17,6 +17,13 @@ spec:
         image: asia-southeast1-docker.pkg.dev/deakinataskboardby224385035/deakin-task-board/app:v1
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "200Mi"
+          limits:
+            cpu: "500m"
+            memory: "500Mi"
         env:
         - name: FIREBASE_API_KEY
           value: "AIzaSyBy4Z3PYziygEpMJp9TWlkO2Poq8hJkjF4"
